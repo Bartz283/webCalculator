@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center; /* Centra la calculadora horizontalmente */
+    align-items: center; /* Centra la calculadora verticalmente */
+    height: 100vh; /* Asegura que la calculadora ocupe la altura completa de la pantalla */
+    background-color: #000; /* Establece un fondo negro */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: 100%; /* Ocupa el 100% del ancho disponible */
+    max-width: 400px; /* Limita el ancho máximo a 400px */
+    background-color: #333; /* Fondo negro oscuro para la calculadora */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para dar un efecto elevado */
+    padding: 20px; /* Espaciado interno */
+    margin: 0 10px; /* Margen lateral para pantallas pequeñas */
+}
+
+.display {
+    background-color: #444; /* Fondo un poco más claro que la calculadora */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    color: #fff; /* Texto en blanco */
+    text-align: right;
+    margin-bottom: 20px; /* Espacio debajo del display */
+    font-size: 2em; /* Tamaño de fuente grande para los números */
+    height: 60px; /* Altura fija para el display */
+    word-wrap: break-word; /* Permite que el texto se ajuste en varias líneas si es necesario */
+}
+
+#history {
+    color: #aaa; /* Gris claro para mostrar el historial de operaciones */
+    font-size: 0.5em; /* Fuente más pequeña para el historial */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Crea una cuadrícula de 4 columnas de igual tamaño */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+.btn {
+    padding: 20px; /* Espaciado interno para los botones */
+    border: none; /* Elimina los bordes de los botones */
+    border-radius: 5px;
+    font-size: 1.2em; /* Tamaño de fuente medio para los botones */
+    color: #202020; /* Color del texto en los botones */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave para los cambios de color al pasar el mouse */
+}
+
+.btn.operator {
+    background-color: #ff4c4c; /* Color rojo para los botones de operadores */
+}
+
+.btn.operator:hover {
+    background-color: #ff1a1a;
+}
+
+.btn.number {
+    background-color: #4c4cff; /* Color azul para los botones de números */
+}
+
+.btn.number:hover {
+    background-color: #1a1aff;
+}
+
+#equals {
+    background-color: #4cff4c;
+    grid-column: span 2; /* El botón de igual ocupa 2 columnas en la cuadrícula */
+}
+
+#equals:hover {
+    background-color: #1aff1a; 
+}
+
+#memory {
+    background-color: #ff9933;
+}
+
+#memory:hover {
+    background-color: #ff751a;
+}
+
+#clear, #backspace {
+    background-color: #555;
+}
+
+#clear:hover, #backspace:hover {
+    background-color: #777;
+}
+
+/* Responsividad para pantallas más pequeñas (por ejemplo, móviles) */
+@media (max-width: 480px) {
+    .btn {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    .display {
+        font-size: 1.5em;
+    }
+
+    .calculator {
+        padding: 15px;
+    }
+}
+
+/* Ajuste para pantallas medianas (por ejemplo, tabletas) */
+@media (max-width: 768px) {
+    .btn {
+        padding: 18px;
+        font-size: 1.1em;
+    }
+
+    .display {
+        font-size: 1.8em;
+    }
+}
